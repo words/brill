@@ -1,0 +1,45 @@
+{
+  "name": "brill",
+  "version": "0.0.1",
+  "description": "Part-of-speech tags from the Brill-tagger",
+  "license": "MIT",
+  "keywords": [
+    "brill",
+    "word",
+    "list",
+    "part",
+    "speech",
+    "part-of-speech",
+    "pos",
+    "post"
+  ],
+  "author": "Titus Wormer <tituswormer@gmail.com>",
+  "dependencies": {
+    "datamap-interface": "^0.0.1"
+  },
+  "devDependencies": {
+    "eslint": "^0.8.0",
+    "istanbul": "^0.3.0",
+    "jscs": "^1.5.0",
+    "mocha": "^1.20.0",
+    "plain-text-data-to-json": "^0.1.1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/wooorm/brill.git"
+  },
+  "scripts": {
+    "test": "node_modules/.bin/_mocha --reporter spec --check-leaks -u exports spec/brill.spec.js",
+    "test-travis": "node_modules/.bin/istanbul cover node_modules/.bin/_mocha --report lcovonly -- --reporter spec --check-leaks -u exports spec/brill.spec.js",
+    "lint": "npm run lint-api && npm run lint-test && npm run lint-style",
+    "lint-api": "node_modules/.bin/eslint index.js build-data.js build-supported-tags.js --env node --env browser --rule 'quotes: [2, single]'",
+    "lint-test": "node_modules/.bin/eslint spec/brill.spec.js --env node --env mocha --rule 'quotes: [2, single]'",
+    "lint-style": "node_modules/.bin/jscs index.js build-data.js build-supported-tags.js spec/brill.spec.js --reporter=inline",
+    "scrape-data": "curl --connect-timeout 15 --max-time 20 -H 'Accept: application/vnd.github.v3.raw' -L https://github.com/mark-watson/fasttag_v2/blob/master/lexicon.txt?raw=true -o data/brill.txt || exit 0",
+    "build-data": "node build-data.js",
+    "build-supported-tags": "node build-supported-tags.js",
+    "coverage": "node_modules/.bin/istanbul cover node_modules/.bin/_mocha -- -- spec/brill.spec.js",
+    "prepublish": "npm run scrape-data && npm run build-data && npm run build-supported-tags",
+    "make": "npm run lint && npm run coverage"
+  }
+}
