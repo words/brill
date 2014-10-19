@@ -2,7 +2,7 @@
 
 var brill, assert;
 
-brill = require('..');
+brill = require('./');
 assert = require('assert');
 
 describe('brill.get(property)', function () {

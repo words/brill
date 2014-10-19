@@ -32,10 +32,10 @@
     "components/",
     "coverage/",
     "node_modules/",
-    "spec/",
     "build-data.js",
     "build-supported-tags.js",
     "tags.js",
+    "test.js",
     "component.json",
     "package.json"
   ]
