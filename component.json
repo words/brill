@@ -21,6 +21,6 @@
     "data/brill.json"
   ],
   "dependencies": {
-    "wooorm/datalist-interface": "~0.0.1"
+    "wooorm/datamap-interface": "^0.1.0"
   }
 }

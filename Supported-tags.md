@@ -7,46 +7,46 @@ Additionally to this list, there are also combinations returned, such as `NNP|VB
 | :-: | :---------- | :------- |
 | ! | Exclamation mark | “!” |
 | # | Pound sign | “#” |
-| $ | Dollar sign | “$”, “A$”, “C$”, “HK$”, “M$”… |
-| ( | Left paren | “(”, “[”, “{” |
-| ) | Right paren | “}”, “)”, “]” |
-| , | Comma | “\*”, “,”, “Freud”, “Wa”, “]\*”… |
-| . | Sent-final punctuation | “.”, “?”, “B.”, “J.M.”, “also”… |
-| : | Mid-sent punctuation | “%...”, “\*”, “-”, “:”, “Also...”… |
+| $ | Dollar sign | “more-than-$”, “million-to-$”, “budget$”, “US$”, “U.S.$”… |
+| ( | Left paren | “{”, “[”, “(” |
+| ) | Right paren | “]”, “)”, “}” |
+| , | Comma | “tubing”, “section”, “laying”, “a”, “]\*”… |
+| . | Sent-final punctuation | “B.”, “insulated”, “J.M.”, “outwardly”, “liabilities”… |
+| : | Mid-sent punctuation | “\*”, “your...”, “yet...”, “years...”, “year...”… |
 | ; | Semicolon | “;” |
-| CC | Coordinating conjunction | “&”, “AND”, “An”, “And”, “Both”… |
-| DT | Determiner | “A”, “AN”, “All”, “An”, “Another”… |
-| EX | Existential there | “There”, “ther”, “there”, “x-There” |
-| FW | Foreign Word | “A”, “A.D.”, “ASPIS”, “Adios”, “Agile”… |
-| IN | Preposition | “@”, “AS”, “AT”, “About”, “Above”… |
-| JJ | Adjective | “%”, “-ing”, “/”, “A”, “A-1”… |
-| JJS | Adjective, superlative | “BEST”, “Best”, “Biggest”, “Budapest”, “Greatest”… |
-| JJR | Adjective, comparative | “BIGGER”, “Better”, “Bigger”, “Clearer”, “Colder”… |
-| LS | List item marker | “A”, “B”, “B.”, “C”, “C.”… |
-| MD | Modal | “Ca”, “Can”, “MIGHT”, “MUST”, “May”… |
-| NNP | Proper Noun, singular | “&”, “Samuel”, “A”, “A&E”, “A&M”… |
-| NNS | Noun, plural | “A”, “A321s”, “A330-300s”, “ABCs”, “ACCEPTANCES”… |
-| NN | Noun, singular or mass | “%”, “%CHG”, “+”, “Yr.”, “aminometha”… |
-| NNPS | Proper noun, plural | “A”, “ACCEPTANCES”, “ACCOUNTS”, “ADRs”, “ADS”… |
-| PDT | Predeterminer | “ALL”, “All”, “Both”, “Half”, “Many”… |
+| CC | Coordinating conjunction | “vs.”, “v.”, “plus”, “neither”, “n”… |
+| DT | Determiner | “thet”, “the”, “that”, “th”, “some”… |
+| EX | Existential there | “There”, “there”, “ther”, “x-There” |
+| FW | Foreign Word | “vue”, “vs.”, “voyage”, “vivo”, “viva”… |
+| IN | Preposition | “worth”, “while”, “vs.”, “vis-a-vis”, “v.”… |
+| JJ | Adjective | “zero-coupon”, “yummy”, “young”, “yielding”, “yield”… |
+| JJS | Adjective, superlative | “west”, “southwest”, “slugfest”, “pest”, “northwest”… |
+| JJR | Adjective, comparative | “wonder”, “volunteer”, “thinner”, “subtler”, “stranger”… |
+| LS | List item marker | “d”, “c”, “b”, “a”, “\\*”… |
+| MD | Modal | “wilt”, “will”, “oughta”, “need”, “must”… |
+| NNP | Proper Noun, singular | “y”, “war”, “van”, “undergraduate”, “triple-C”… |
+| NNS | Noun, plural | “yuan”, “young”, “yen”, “x-rays”, “write-offs”… |
+| NN | Noun, singular or mass | “zq”, “zotl”, “zoot”, “zoooop”, “zoology”… |
+| NNPS | Proper noun, plural | “Winter”, “West”, “T.”, “Summer”, “Stars”… |
+| PDT | Predeterminer | “the”, “many”, “Half”, “sure”, “such”… |
 | POS | Possessive ending | “S” |
-| PRP | Personal pronoun | “A”, “Ah”, “Ahm”, “HE”, “He”… |
-| PRP$ | Possessive pronoun | “HIS”, “His”, “Its”, “My”, “Our”… |
-| RB | Adverb | “A.D.”, “A.M”, “A.M.”, “AHEAD”, “About”… |
-| RBS | Adverb, superlative | “Best”, “Hardest”, “Most”, “Worst”, “best”… |
-| RBR | Adverb, comparative | “Better”, “Closer”, “Earlier”, “Easier”, “Further”… |
-| RP | Particle | “AWAY”, “Back”, “Howard”, “IN”, “ON”… |
-| SYM | Symbol | “%”, “&”, “\*”, “+”, “<”… |
-| TO | "to" | “TO”, “To”, “na”, “to” |
-| UH | Interjection | “Aaa-ee”, “Aaawww”, “Aah”, “Afternoon”, “Ah”… |
-| VBP | Verb, non 3rd person, singular, present | “AM”, “ARE”, “ARISE”, “Agree”, “Ai”… |
-| VBD | Verb, past tense | “ADDED”, “ADMITTED”, “ADOPTED”, “AGREED”, “ALLOWED”… |
-| VBG | Verb, present participle/gerund | “Absorbing”, “Accepting”, “According”, “Accounting”, “Acting”… |
-| VBN | Verb, past participle | “Absorbed”, “Accelerated”, “Accepted”, “Accompanied”, “Accrued”… |
-| VB | Verb, base form | “%”, “A”, “Abandon”, “Absent”, “Accept”… |
-| VBZ | Verb, 3rd singular present | “APPEARS”, “Adds”, “Ai”, “Aims”, “Answers”… |
+| PRP | Personal pronoun | “yow”, “ye”, “ya”, “u”, “self”… |
+| PRP$ | Possessive pronoun | “yore”, “mine”, “My”, “thy”, “ours”… |
+| RB | Adverb | “yore”, “yesterday”, “year-end”, “wrong”, “worth”… |
+| RBS | Adverb, superlative | “most”, “best”, “worst”, “least”, “less”… |
+| RBR | Adverb, comparative | “riskier”, “more”, “lighter”, “in”, “earlier”… |
+| RP | Particle | “whole”, “that”, “start”, “raising”, “pie”… |
+| SYM | Symbol | “ye”, “\\*\\*”, “\\*”, “>”, “+”… |
+| TO | "to" | “To”, “to”, “na”, “TO” |
+| UH | Interjection | “yeah”, “whiz”, “well”, “that”, “sir”… |
+| VBP | Verb, non 3rd person, singular, present | “zip”, “yield”, “yearn”, “wrap”, “wrack”… |
+| VBD | Verb, past tense | “wound”, “won”, “wet”, “upset”, “underwrote”… |
+| VBG | Verb, present participle/gerund | “zoning”, “zapping”, “yielding”, “yelling”, “yearning”… |
+| VBN | Verb, past participle | “writ”, “wound”, “worth”, “won”, “upset”… |
+| VB | Verb, base form | “zip”, “yield”, “yellow”, “yell”, “yearn”… |
+| VBZ | Verb, 3rd singular present | “swoops”, “stands”, “sound”, “shares”, “range”… |
 | WP$ | Possessive-Wh | “whose” |
-| WDT | Wh-determiner | “THAT”, “That”, “WHAT”, “WHICH”, “What”… |
-| WRB | Wh-adverb | “How”, “Howda”, “WHEN”, “Whah”, “When”… |
-| WP | Wh-pronoun | “That”, “WHAT”, “WHO”, “Wha”, “What”… |
-| \`\` | Quote | “Chill.\`\`”, “Co.\`\`”, “Hammer.\`\`”, “Plaintiffs\`\`”, “\`”… |.
+| WDT | Wh-determiner | “that”, “quo”, “What”, “That”, “THAT”… |
+| WRB | Wh-adverb | “Why”, “Where”, “When”, “How”, “when”… |
+| WP | Wh-pronoun | “who”, “that”, “Whom”, “Whoever”, “Who”… |
+| \`\` | Quote | “without,\`\`”, “whiskeys\`\`”, “this.\`\`”, “said:\`\`”, “said.\`\`”… |.
