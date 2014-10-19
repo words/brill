@@ -8,7 +8,7 @@ var fs,
 
 fs = require('fs');
 textToJSON = require('plain-text-data-to-json');
-tags = require('./tags');
+tags = require('../tags');
 
 data = textToJSON(fs.readFileSync('data/brill.txt', 'utf8'), {
     'comment' : false,

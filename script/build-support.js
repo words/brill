@@ -6,8 +6,8 @@ var fs,
     examples;
 
 fs = require('fs');
-brill = require('./');
-tags = require('./tags');
+brill = require('../');
+tags = require('../tags');
 
 examples = {};
 
