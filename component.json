@@ -13,14 +13,14 @@
     "pos",
     "post"
   ],
+  "dependencies": {
+    "wooorm/datamap-interface": "^0.1.0"
+  },
   "repository": "wooorm/brill",
   "scripts": [
     "index.js"
   ],
   "json": [
     "data/brill.json"
-  ],
-  "dependencies": {
-    "wooorm/datamap-interface": "^0.1.0"
-  }
+  ]
 }

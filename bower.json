@@ -13,6 +13,9 @@
     "pos",
     "post"
   ],
+  "dependencies": {
+    "datamap-interface": "^0.1.0"
+  },
   "repository": {
     "type": "git",
     "url": "https://github.com/wooorm/brill.git"
@@ -20,9 +23,6 @@
   "authors": [
     "Titus Wormer <tituswormer@gmail.com>"
   ],
-  "dependencies": {
-    "datamap-interface": "^0.1.0"
-  },
   "ignore": [
     ".*",
     "*.log",
