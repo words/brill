@@ -6,7 +6,6 @@ components/
 coverage/
 node_modules/
 script/
-tags.js
 test.js
 bower.json
 component.json

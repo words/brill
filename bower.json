@@ -33,7 +33,6 @@
     "coverage/",
     "node_modules/",
     "script/",
-    "tags.js",
     "test.js",
     "component.json",
     "package.json"

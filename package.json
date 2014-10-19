@@ -37,9 +37,9 @@
     "lint-style": "node_modules/.bin/jscs index.js script/build-data.js script/build-support.js test.js --reporter=inline",
     "scrape-data": "curl --connect-timeout 15 --max-time 20 -H 'Accept: application/vnd.github.v3.raw' -L https://github.com/mark-watson/fasttag_v2/blob/master/lexicon.txt?raw=true -o data/brill.txt || exit 0",
     "build-data": "node script/build-data.js",
-    "build-supported-tags": "node script/build-support.js",
+    "build-support": "node script/build-support.js",
     "coverage": "node_modules/.bin/istanbul cover node_modules/.bin/_mocha -- -- test.js",
-    "prepublish": "npm run scrape-data && npm run build-data && npm run build-supported-tags",
+    "prepublish": "npm run scrape-data && npm run build-data && npm run build-support",
     "make": "npm run lint && npm run coverage"
   }
 }

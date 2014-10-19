@@ -7,7 +7,7 @@ var fs,
 
 fs = require('fs');
 brill = require('../');
-tags = require('../tags');
+tags = require('../data/tags');
 
 examples = {};
 
@@ -31,8 +31,8 @@ fs.writeFileSync('Supported-tags.md',
     '| tag | description | examples |\n' +
     '| :-: | :---------- | :------- |\n' +
 
-    Object.keys(tags.all()).map(function (tag) {
-        return [tag, tags.get(tag)];
+    Object.keys(tags).map(function (tag) {
+        return [tag, tags[tag]];
     }).sort(function (a, b) {
         return a[0].charCodeAt(0) - b[0].charCodeAt(0);
     }).map(function (tag) {

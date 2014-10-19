@@ -8,7 +8,7 @@ var fs,
 
 fs = require('fs');
 textToJSON = require('plain-text-data-to-json');
-tags = require('../tags');
+tags = require('../data/tags');
 
 data = textToJSON(fs.readFileSync('data/brill.txt', 'utf8'), {
     'comment' : false,
@@ -67,7 +67,7 @@ Object.keys(data).forEach(function (word) {
                 subtag = 'NNP';
             }
 
-            if (!tags.has(subtag)) {
+            if (!(subtag in tags)) {
                 console.log(
                     'Unknown tag for word `' + word + '`: ', subtag, tag
                 );
