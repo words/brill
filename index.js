@@ -1,16 +1,31 @@
 'use strict';
 
-var data,
-    Interface,
-    dictionary,
+/**
+ * Dependencies.
+ */
+
+var Interface;
+
+Interface = require('datamap-interface');
+
+/**
+ * Data.
+ */
+
+var data;
+
+data = require('./data/brill.json');
+
+/**
+ * Expand data.
+ */
+
+var dictionary,
+    has,
     index,
     words,
     word,
-    has,
     tag;
-
-Interface = require('datamap-interface');
-data = require('./data/brill.json');
 
 dictionary = {};
 
@@ -30,5 +45,9 @@ for (tag in data) {
         }
     }
 }
+
+/**
+ * Expose brill.
+ */
 
 module.exports = new Interface(dictionary);
