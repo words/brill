@@ -1,9 +1,18 @@
 'use strict';
 
-var brill, assert;
+/**
+ * Dependencies.
+ */
+
+var brill,
+    assert;
 
 brill = require('./');
 assert = require('assert');
+
+/**
+ * Tests.
+ */
 
 describe('brill.get(property)', function () {
     it('should return the value of an item in the database', function () {
@@ -65,24 +74,29 @@ describe('brill.add() and brill.remove()', function () {
         assert(!brill.has('unicorn'));
 
         brill.add('unicorn', 'mammal');
+
         assert(brill.has('unicorn'));
 
         brill.remove('unicorn');
+
         assert(!brill.has('unicorn'));
     });
 
     it('should add and remove multiple values', function () {
         assert(!brill.has('unicorn'));
+
         assert(!brill.has('doge'));
 
         brill.add({
             'unicorn' : 'mammal',
             'doge' : 'mammal'
         });
+
         assert(brill.has('unicorn'));
         assert(brill.has('doge'));
 
         brill.remove(['unicorn', 'doge']);
+
         assert(!brill.has('unicorn'));
         assert(!brill.has('doge'));
     });
@@ -90,7 +104,9 @@ describe('brill.add() and brill.remove()', function () {
     it('should fail silently when removing a non-existing item',
         function () {
             assert(!brill.has('unicorn'));
+
             brill.remove('unicorn');
+
             assert(!brill.has('unicorn'));
         }
     );
