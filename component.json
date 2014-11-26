@@ -14,7 +14,7 @@
     "post"
   ],
   "dependencies": {
-    "wooorm/datamap-interface": "^0.1.0"
+    "wooorm/datamap-interface": "^0.3.0"
   },
   "repository": "wooorm/brill",
   "scripts": [
