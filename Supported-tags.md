@@ -49,4 +49,4 @@ Additionally to this list, there are also combinations returned, such as `NNP|VB
 | WDT | Wh-determiner | “that”, “quo”, “What”, “That”, “THAT”… |
 | WRB | Wh-adverb | “Why”, “Where”, “When”, “How”, “when”… |
 | WP | Wh-pronoun | “who”, “that”, “Whom”, “Whoever”, “Who”… |
-| \`\` | Quote | “without,\`\`”, “whiskeys\`\`”, “this.\`\`”, “said:\`\`”, “said.\`\`”… |.
+| \`\` | Quote | “without,\`\`”, “whiskeys\`\`”, “this.\`\`”, “said:\`\`”, “said.\`\`”… |

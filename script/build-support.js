@@ -1,13 +1,22 @@
 'use strict';
 
+/**
+ * Dependencies.
+ */
+
 var fs,
     brill,
-    tags,
-    examples;
+    tags;
 
 fs = require('fs');
 brill = require('../');
 tags = require('../data/tags');
+
+/**
+ * Examples.
+ */
+
+var examples;
 
 examples = {};
 
@@ -20,6 +29,10 @@ Object.keys(brill.all()).forEach(function (word) {
         examples[tag].push(word);
     });
 });
+
+/**
+ * Write
+ */
 
 fs.writeFileSync('Supported-tags.md',
     'Supported Tags\n' +
@@ -53,5 +66,5 @@ fs.writeFileSync('Supported-tags.md',
             ' |';
     }).join('\n') +
 
-    '.\n'
+    '\n'
 );
