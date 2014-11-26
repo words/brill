@@ -61,4 +61,4 @@ See [Supported-tags.md](Supported-tags.md).
 
 ## License
 
-MIT © Titus Wormer
+MIT © [Titus Wormer](http://wooorm.com)
