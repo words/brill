@@ -55,9 +55,9 @@ It is recommended to check a given word first in its original form, and second, 
 
 See [the **datamap-interface** API](https://github.com/wooorm/datamap-interface).
 
-## Tags
+## Supported Tags
 
-See [Supported-tags.md](Supported-tags.md).
+See [Support.md](Support.md).
 
 ## License
 

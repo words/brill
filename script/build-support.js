@@ -34,7 +34,7 @@ Object.keys(brill.all()).forEach(function (word) {
  * Write
  */
 
-fs.writeFileSync('Supported-tags.md',
+fs.writeFileSync('Support.md',
     'Supported Tags\n' +
     '=================\n' +
     '\n' +
