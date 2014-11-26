@@ -5,11 +5,13 @@
  */
 
 var fs,
+    table,
     brill,
     tags;
 
 fs = require('fs');
-brill = require('../');
+table = require('markdown-table');
+brill = require('..');
 tags = require('../data/tags');
 
 /**
@@ -31,19 +33,18 @@ Object.keys(brill.all()).forEach(function (word) {
 });
 
 /**
- * Write
+ * Data.
  */
 
-fs.writeFileSync('Support.md',
-    'Supported Tags\n' +
-    '=================\n' +
-    '\n' +
-    'Additionally to this list, there are also combinations returned, ' +
-    'such as `NNP|VBN` for `England-born`.\n' +
-    '\n' +
-    '| tag | description | examples |\n' +
-    '| :-: | :---------- | :------- |\n' +
+var data;
 
+function clean(value) {
+    return value.replace(/[`_*]/g, '\\$&');
+}
+
+data = [
+    ['Tag', 'Description', 'Examples']
+].concat(
     Object.keys(tags).map(function (tag) {
         return [tag, tags[tag]];
     }).sort(function (a, b) {
@@ -57,14 +58,25 @@ fs.writeFileSync('Support.md',
             example += '…';
         }
 
-        return '| ' +
-            [
-                tag[0],
-                tag[1],
-                example
-            ].join(' | ').replace(/[`_*]/g, '\\$&') +
-            ' |';
-    }).join('\n') +
+        return [tag[0], tag[1], example].map(clean);
+    })
+);
+
+/**
+ * Write
+ */
+
+fs.writeFileSync('Support.md',
+    'Supported Tags\n' +
+    '=================\n' +
+    '\n' +
+    'Additionally to this list, there are also combinations returned, ' +
+    'such as `NNP|VBN` for `England-born`.\n' +
+    '\n' +
+
+    table(data, {
+        'align': ['c']
+    }) +
 
     '\n'
 );
