@@ -1,20 +1,32 @@
 'use strict';
 
+/**
+ * Dependencies.
+ */
+
 var fs,
-    textToJSON,
-    data,
-    tags,
-    dictionary;
+    toJSON,
+    tags;
 
 fs = require('fs');
-textToJSON = require('plain-text-data-to-json');
+toJSON = require('plain-text-data-to-json');
 tags = require('../data/tags');
 
-data = textToJSON(fs.readFileSync('data/brill.txt', 'utf8'), {
+/**
+ * Data.
+ */
+
+var data;
+
+data = toJSON(fs.readFileSync('data/brill.txt', 'utf8'), {
     'comment': false,
     'delimiter': ' ',
     'forgiving': 'fix'
 });
+
+/**
+ * Clean.
+ */
 
 Object.keys(data).forEach(function (word) {
     if (word === word.toLowerCase() || !data[word.toLowerCase()]) {
@@ -28,6 +40,7 @@ Object.keys(data).forEach(function (word) {
 
     if (data[word] === data[word.toLowerCase()]) {
         delete data[word];
+
         return;
     }
 });
@@ -78,6 +91,12 @@ Object.keys(data).forEach(function (word) {
     });
 });
 
+/**
+ * Minify.
+ */
+
+var dictionary;
+
 dictionary = {};
 
 Object.keys(data).forEach(function (word) {
@@ -90,4 +109,8 @@ Object.keys(data).forEach(function (word) {
     });
 });
 
-fs.writeFileSync('data/brill.json', JSON.stringify(dictionary, 0, 2));
+/**
+ * Write.
+ */
+
+fs.writeFileSync('data/brill.json', JSON.stringify(dictionary, null, 2));
