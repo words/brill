@@ -88,8 +88,8 @@ describe('brill.add() and brill.remove()', function () {
         assert(!brill.has('doge'));
 
         brill.add({
-            'unicorn' : 'mammal',
-            'doge' : 'mammal'
+            'unicorn': 'mammal',
+            'doge': 'mammal'
         });
 
         assert(brill.has('unicorn'));
@@ -116,7 +116,7 @@ describe('brill.add() and brill.remove()', function () {
         Object.prototype.platypus = 'mammal';
 
         brill.add({
-            'unicorn' : 'mammal'
+            'unicorn': 'mammal'
         });
 
         assert(!brill.has('platypus'));

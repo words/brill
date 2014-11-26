@@ -11,9 +11,9 @@ textToJSON = require('plain-text-data-to-json');
 tags = require('../data/tags');
 
 data = textToJSON(fs.readFileSync('data/brill.txt', 'utf8'), {
-    'comment' : false,
-    'delimiter' : ' ',
-    'forgiving' : 'fix'
+    'comment': false,
+    'delimiter': ' ',
+    'forgiving': 'fix'
 });
 
 Object.keys(data).forEach(function (word) {
