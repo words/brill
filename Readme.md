@@ -1,4 +1,4 @@
-# brill [![Build Status](https://travis-ci.org/wooorm/brill.svg?branch=master)](https://travis-ci.org/wooorm/brill) [![Coverage Status](https://img.shields.io/coveralls/wooorm/brill.svg)](https://coveralls.io/r/wooorm/brill?branch=master)
+# brill [![Build Status](https://img.shields.io/travis/wooorm/brill.svg?style=flat)](https://travis-ci.org/wooorm/brill) [![Coverage Status](https://img.shields.io/coveralls/wooorm/brill.svg?style=flat)](https://coveralls.io/r/wooorm/brill?branch=master)
 
 The part-of-speech tags from the [Brill-tagger](http://en.wikipedia.org/wiki/Brill_tagger): 89,539 unique words/symbols with one or more [tags](Supported-tags.md).
 
