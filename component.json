@@ -1,6 +1,6 @@
 {
   "name": "brill",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Part-of-speech tags from the Brill-tagger",
   "license": "MIT",
   "keywords": [
