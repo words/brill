@@ -27,7 +27,7 @@
     "jscs": "^1.0.0",
     "markdown-table": "^0.1.0",
     "mocha": "^2.0.0",
-    "plain-text-data-to-json": "^0.1.0"
+    "plain-text-data-to-json": "^1.0.0"
   },
   "scripts": {
     "test": "node_modules/.bin/_mocha --reporter spec --check-leaks -u exports test.js",
