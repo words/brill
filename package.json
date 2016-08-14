@@ -31,7 +31,7 @@
     "esmangle": "^1.0.1",
     "follow-redirects": "^0.2.0",
     "has": "^1.0.1",
-    "nyc": "^7.0.0",
+    "nyc": "^8.1.0",
     "plain-text-data-to-json": "^1.0.0",
     "remark-cli": "^1.0.0",
     "remark-comment-config": "^4.0.0",
