@@ -31,13 +31,10 @@
     "esmangle": "^1.0.1",
     "follow-redirects": "^0.2.0",
     "has": "^1.0.1",
-    "nyc": "^7.0.0",
+    "nyc": "^8.0.0",
     "plain-text-data-to-json": "^1.0.0",
-    "remark-cli": "^1.0.0",
-    "remark-comment-config": "^4.0.0",
-    "remark-github": "^5.0.0",
-    "remark-lint": "^4.0.0",
-    "remark-validate-links": "^4.0.0",
+    "remark-cli": "^2.0.0",
+    "remark-preset-wooorm": "^1.0.0",
     "tape": "^4.0.0",
     "xo": "^0.16.0"
   },
@@ -58,22 +55,11 @@
       "guard-for-in": "off"
     },
     "ignores": [
-      "brill.js",
-      "brill.min.js"
+      "brill.js"
     ]
   },
   "remarkConfig": {
     "output": true,
-    "plugins": {
-      "comment-config": null,
-      "github": null,
-      "lint": {
-        "list-item-spacing": false
-      },
-      "validate-links": null
-    },
-    "settings": {
-      "bullet": "*"
-    }
+    "presets": "wooorm"
   }
 }
