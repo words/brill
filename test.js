@@ -1,11 +1,3 @@
-/**
- * @author Titus Wormer
- * @copyright 2014 Titus Wormer
- * @license MIT
- * @module brill
- * @fileoverview Test suite for `brill`.
- */
-
 'use strict';
 
 /* Dependencies. */
