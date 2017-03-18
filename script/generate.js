@@ -55,8 +55,6 @@ function clean(data) {
 
     if (data[word] === data[caseless]) {
       delete data[word];
-
-      return;
     }
   });
 
