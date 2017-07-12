@@ -1,10 +1,8 @@
 'use strict';
 
-/* Dependencies. */
 var test = require('tape');
 var brill = require('./');
 
-/* Tests. */
 test('brill', function (t) {
   t.deepEqual(
     brill.that,

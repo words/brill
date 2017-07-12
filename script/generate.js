@@ -1,16 +1,7 @@
-/**
- * @author Titus Wormer
- * @copyright 2014 Titus Wormer
- * @license MIT
- * @module afinn-111:script
- * @fileoverview Generate
- */
-
 'use strict';
 
 /* eslint-disable babel/new-cap */
 
-/* Dependencies. */
 var fs = require('fs');
 var path = require('path');
 var https = require('follow-redirects').https;
@@ -20,13 +11,10 @@ var bail = require('bail');
 var concat = require('concat-stream');
 var tags = require('../lib/descriptions');
 
-/* Constants. */
-var url = 'https://github.com/mark-watson/fasttag_v2/' +
-  'blob/master/lexicon.txt?raw=true';
+var url = 'https://github.com/mark-watson/fasttag_v2/blob/master/lexicon.txt?raw=true';
 
 process.on('uncaughtException', bail);
 
-/* Read. */
 https
   .get(url, function (res) {
     res.resume()
