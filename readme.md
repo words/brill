@@ -5,7 +5,7 @@ words/symbols with one or more [tags][descriptions].
 
 ## Installation
 
-[npm][npm-install]:
+[npm][]:
 
 ```bash
 npm install brill
@@ -18,16 +18,13 @@ var brill = require('brill');
 
 Object.keys(brill).length; // 89539
 
-brill.Eric;
-// [ 'NNP' ]
+brill.Eric; //=> [ 'NNP' ]
 // (Proper Noun, singular)
 
-brill['most-contentious'];
-// [ 'RB|VBG' ]
+brill['most-contentious']; //=> [ 'RB|VBG' ]
 // (Adverb; Verb, present participle/gerund)
 
-brill.AA;
-// [ 'JJ', 'NN', 'NNP' ]
+brill.AA; //=> [ 'JJ', 'NN', 'NNP' ]
 // (Adjective; Noun, singular or mass; Proper Noun, singular)
 ```
 
@@ -35,7 +32,7 @@ brill.AA;
 
 ### `brill`
 
-**brill** exposes an object where the keys are words and the values are
+`brill` exposes an object where the keys are words and the values are
 a list of tags / joined tags (`Object.<string>`).
 
 ## Capitalisation
@@ -53,18 +50,18 @@ and second, if no tags are found, in its lowercase form.
 
 ## Related
 
-*   [buzzwords](https://github.com/wooorm/buzzwords)
-    — List of buzzwords;
-*   [fillers](https://github.com/wooorm/fillers)
-    — List of filler words;
-*   [hedges](https://github.com/wooorm/hedges)
-    — List of hedge words;
-*   [profanities](https://github.com/wooorm/profanities)
-    — List of profane words;
-*   [dale-chall](https://github.com/wooorm/dale-chall)
-    — List of familiar American-English words: New Dale-Chall (1995);
-*   [weasels](https://github.com/wooorm/weasels)
-    — List of weasel words.
+*   [`buzzwords`](https://github.com/wooorm/buzzwords)
+    — List of buzzwords
+*   [`fillers`](https://github.com/wooorm/fillers)
+    — List of filler words
+*   [`hedges`](https://github.com/wooorm/hedges)
+    — List of hedge words
+*   [`profanities`](https://github.com/wooorm/profanities)
+    — List of profane words
+*   [`dale-chall`](https://github.com/wooorm/dale-chall)
+    — List of familiar American-English words
+*   [`weasels`](https://github.com/wooorm/weasels)
+    — List of weasel words
 
 ## License
 
@@ -80,7 +77,7 @@ and second, if no tags are found, in its lowercase form.
 
 [codecov]: https://codecov.io/github/wooorm/brill
 
-[npm-install]: https://docs.npmjs.com/cli/install
+[npm]: https://docs.npmjs.com/cli/install
 
 [license]: LICENSE
 
