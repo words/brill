@@ -33,7 +33,7 @@
     "has": "^1.0.1",
     "nyc": "^11.0.0",
     "plain-text-data-to-json": "^1.0.0",
-    "remark-cli": "^3.0.0",
+    "remark-cli": "^4.0.0",
     "remark-preset-wooorm": "^3.0.0",
     "tape": "^4.0.0",
     "xo": "^0.18.0"
