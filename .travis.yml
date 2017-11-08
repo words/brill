@@ -1,7 +1,7 @@
 language: node_js
 node_js:
 - '4.0'
-- '8.0'
+- '9.0'
 after_script: bash <(curl -s https://codecov.io/bash)
 deploy:
   - provider: npm
@@ -10,7 +10,7 @@ deploy:
       secure: Db5Q9sFLrHA/9OsLzI5Os3q7fYzEkMLywIk4nncX+6sbrpvApmMJBTrDpvjzUKM1yChbiWKwRlbF2e42tkAtndOj+4eu9DgM8Ua1P6VFPZa4V5xJP2u5qJMArrn8AIs4VUQN9YfvpfqHlZdbpWAp/vF4Tge/k3qV+ezDx2Awz/0=
     on:
       tags: true
-      node: '4.0'
+      node: '9.0'
   - provider: releases
     api_key:
       secure: CGGSKkPaN+zTsLMd05tJMfwGF35viy4Lc4+X32wAynR4lvKqNrd0hJJt9aFDpBWCZ4GoIEAoc7C3ssk4JhAPxmzPLH0YhDZqxlGu/giKQw4oBWDtYGspdt7pxNtwEZJSr64itCnfmNhU1rYrf/mMYfOt/pq3oVpqJtUAbCJjONo=
@@ -19,4 +19,4 @@ deploy:
       - "brill.min.js"
     on:
       tags: true
-      node: '8.0'
+      node: '9.0'
