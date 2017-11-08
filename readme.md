@@ -50,17 +50,17 @@ and second, if no tags are found, in its lowercase form.
 
 ## Related
 
-*   [`buzzwords`](https://github.com/wooorm/buzzwords)
+*   [`buzzwords`](https://github.com/words/buzzwords)
     — List of buzzwords
-*   [`fillers`](https://github.com/wooorm/fillers)
+*   [`fillers`](https://github.com/words/fillers)
     — List of filler words
-*   [`hedges`](https://github.com/wooorm/hedges)
+*   [`hedges`](https://github.com/words/hedges)
     — List of hedge words
-*   [`profanities`](https://github.com/wooorm/profanities)
+*   [`profanities`](https://github.com/words/profanities)
     — List of profane words
-*   [`dale-chall`](https://github.com/wooorm/dale-chall)
+*   [`dale-chall`](https://github.com/words/dale-chall)
     — List of familiar American-English words
-*   [`weasels`](https://github.com/wooorm/weasels)
+*   [`weasels`](https://github.com/words/weasels)
     — List of weasel words
 
 ## License
@@ -69,13 +69,13 @@ and second, if no tags are found, in its lowercase form.
 
 <!-- Definitions -->
 
-[travis-badge]: https://img.shields.io/travis/wooorm/brill.svg
+[travis-badge]: https://img.shields.io/travis/words/brill.svg
 
-[travis]: https://travis-ci.org/wooorm/brill
+[travis]: https://travis-ci.org/words/brill
 
-[codecov-badge]: https://img.shields.io/codecov/c/github/wooorm/brill.svg
+[codecov-badge]: https://img.shields.io/codecov/c/github/words/brill.svg
 
-[codecov]: https://codecov.io/github/wooorm/brill
+[codecov]: https://codecov.io/github/words/brill
 
 [npm]: https://docs.npmjs.com/cli/install
 

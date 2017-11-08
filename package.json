@@ -17,8 +17,8 @@
     "lib/",
     "index.js"
   ],
-  "repository": "https://github.com/wooorm/brill",
-  "bugs": "https://github.com/wooorm/brill/issues",
+  "repository": "words/brill",
+  "bugs": "https://github.com/words/brill/issues",
   "author": "Titus Wormer <tituswormer@gmail.com> (http://wooorm.com)",
   "contributors": [
     "Titus Wormer <tituswormer@gmail.com> (http://wooorm.com)"
