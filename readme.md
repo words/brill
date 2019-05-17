@@ -1,4 +1,9 @@
-# brill [![Build Status][travis-badge]][travis] [![Coverage Status][codecov-badge]][codecov]
+# brill
+
+[![Build][build-badge]][build]
+[![Coverage][coverage-badge]][coverage]
+[![Downloads][downloads-badge]][downloads]
+[![Size][size-badge]][size]
 
 The part-of-speech tags from the [Brill-tagger][wiki]: 89,539 unique
 words/symbols with one or more [tags][descriptions].
@@ -71,13 +76,21 @@ and second, if no tags are found, in its lowercase form.
 
 <!-- Definitions -->
 
-[travis-badge]: https://img.shields.io/travis/words/brill.svg
+[build-badge]: https://img.shields.io/travis/words/brill.svg
 
-[travis]: https://travis-ci.org/words/brill
+[build]: https://travis-ci.org/words/brill
 
-[codecov-badge]: https://img.shields.io/codecov/c/github/words/brill.svg
+[coverage-badge]: https://img.shields.io/codecov/c/github/wooorm/brill.svg
 
-[codecov]: https://codecov.io/github/words/brill
+[coverage]: https://codecov.io/github/wooorm/brill
+
+[downloads-badge]: https://img.shields.io/npm/dm/brill.svg
+
+[downloads]: https://www.npmjs.com/package/brill
+
+[size-badge]: https://img.shields.io/bundlephobia/minzip/brill.svg
+
+[size]: https://bundlephobia.com/result?p=brill
 
 [npm]: https://docs.npmjs.com/cli/install
 
