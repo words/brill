@@ -1,24 +1,15 @@
 language: node_js
+sudo: false
 node_js:
-- '4.0'
-- '9.0'
-after_script: bash <(curl -s https://codecov.io/bash)
+  - lts/dubnium
+  - node
 deploy:
-  - provider: npm
-    skip_cleanup: true
-    email: tituswormer@gmail.com
-    api_key:
-      secure: Db5Q9sFLrHA/9OsLzI5Os3q7fYzEkMLywIk4nncX+6sbrpvApmMJBTrDpvjzUKM1yChbiWKwRlbF2e42tkAtndOj+4eu9DgM8Ua1P6VFPZa4V5xJP2u5qJMArrn8AIs4VUQN9YfvpfqHlZdbpWAp/vF4Tge/k3qV+ezDx2Awz/0=
-    on:
-      tags: true
-      node: '9.0'
-  - provider: releases
-    skip_cleanup: true
-    api_key:
-      secure: CGGSKkPaN+zTsLMd05tJMfwGF35viy4Lc4+X32wAynR4lvKqNrd0hJJt9aFDpBWCZ4GoIEAoc7C3ssk4JhAPxmzPLH0YhDZqxlGu/giKQw4oBWDtYGspdt7pxNtwEZJSr64itCnfmNhU1rYrf/mMYfOt/pq3oVpqJtUAbCJjONo=
-    file:
-      - "brill.js"
-      - "brill.min.js"
-    on:
-      tags: true
-      node: '9.0'
+  provider: releases
+  skip_cleanup: true
+  api_key:
+    secure: VYO6mwMtWzQ0XtzWLaLldPseMyGRAE1LSUq5wPEZSm61qKvvE23WrZFd9Gw3jtsemFRirRaZEwjLpjtFbHpLKokogQ3AWLV7S28ToS+PruHtmnyLiIL+VPoBDau5YfJOx7UGoarBIjJuU955IP4FUL28RFvs43RaLpRUhB3z6j0=
+  file:
+    - 'brill.js'
+    - 'brill.min.js'
+  on:
+    tags: true
