@@ -1,17 +1,16 @@
 'use strict';
 
-/* eslint-disable babel/new-cap */
-
 var fs = require('fs');
 var path = require('path');
 var https = require('follow-redirects').https;
 var toJSON = require('plain-text-data-to-json');
-var has = require('has');
 var bail = require('bail');
 var concat = require('concat-stream');
 var tags = require('../lib/descriptions');
 
 var url = 'https://github.com/mark-watson/fasttag_v2/blob/master/lexicon.txt?raw=true';
+
+var own = {}.hasOwnProperty;
 
 process.on('uncaughtException', bail);
 
@@ -37,7 +36,7 @@ function clean(data) {
   Object.keys(data).forEach(function (word) {
     var caseless = word.toLowerCase();
 
-    if (word === caseless || !has(data, caseless)) {
+    if (word === caseless || !own.call(data, caseless)) {
       return;
     }
 

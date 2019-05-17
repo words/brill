@@ -1,7 +1,7 @@
 'use strict';
 
 var test = require('tape');
-var brill = require('./');
+var brill = require('.');
 
 test('brill', function (t) {
   t.deepEqual(
