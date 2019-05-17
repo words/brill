@@ -79,7 +79,7 @@ and second, if no tags are found, in its lowercase form.
 
 [npm]: https://docs.npmjs.com/cli/install
 
-[license]: LICENSE
+[license]: license
 
 [author]: http://wooorm.com
 
