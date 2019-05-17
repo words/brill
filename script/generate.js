@@ -29,8 +29,8 @@ function onconcat(buf) {
 }
 
 function clean(data) {
-  /* Remove values of which the capitalised version
-   * has the same value as the lower case version. */
+  // Remove values of which the capitalised version has the same value as the
+  // lower case version.
   Object.keys(data).forEach(function(word) {
     var caseless = word.toLowerCase()
 
@@ -48,23 +48,22 @@ function clean(data) {
       return tag
         .split('|')
         .map(function(subtag) {
-          /* There's one tag, `JJSS` for the one word `best`,
-           * which I think should be `JJS` */
+          // There's one tag, `JJSS` for the one word `best`, which I think
+          // should be `JJS`
           if (subtag === 'JJSS') {
             subtag = 'JJS'
           }
 
-          /* There's one tag, `PRP$R` for the two words
-           * `Her` and `her`, which I think should be `PRP$`. */
+          // There's one tag, `PRP$R` for the two words `Her` and `her`, which
+          // I think should be `PRP$`.
           if (subtag === 'PRP$R') {
             subtag = 'PRP$'
           }
 
-          /* The data contains different tags for Proper
-           * nouns versus the normal Brown corpus.
-           * Sub-tags, denoted by pipes, however seem not
-           * to have changed from Brown's `NPS` to our
-           * `NNPS`. */
+          // The data contains different tags for Proper nouns versus the normal
+          // Brown corpus.
+          // Sub-tags, denoted by pipes, however seem not to have changed from
+          // Brown’s `NPS` to our `NNPS`.
           if (subtag === 'NPS') {
             subtag = 'NNPS'
           }
