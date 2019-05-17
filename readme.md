@@ -81,8 +81,8 @@ and second, if no tags are found, in its lowercase form.
 
 [license]: license
 
-[author]: http://wooorm.com
+[author]: https://wooorm.com
 
-[wiki]: http://en.wikipedia.org/wiki/Brill_tagger
+[wiki]: https://en.wikipedia.org/wiki/Brill_tagger
 
 [descriptions]: lib/descriptions.json
