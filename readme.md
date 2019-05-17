@@ -80,9 +80,9 @@ and second, if no tags are found, in its lowercase form.
 
 [build]: https://travis-ci.org/words/brill
 
-[coverage-badge]: https://img.shields.io/codecov/c/github/wooorm/brill.svg
+[coverage-badge]: https://img.shields.io/codecov/c/github/words/brill.svg
 
-[coverage]: https://codecov.io/github/wooorm/brill
+[coverage]: https://codecov.io/github/words/brill
 
 [downloads-badge]: https://img.shields.io/npm/dm/brill.svg
 
