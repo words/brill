@@ -14,17 +14,17 @@ npm install brill
 ## Usage
 
 ```js
-var brill = require('brill');
+var brill = require('brill')
 
-Object.keys(brill).length; // 89539
+console.log(Object.keys(brill).length) // 89539
 
-brill.Eric; //=> [ 'NNP' ]
+console.log(brill.Eric) //=> [ 'NNP' ]
 // (Proper Noun, singular)
 
-brill['most-contentious']; //=> [ 'RB|VBG' ]
+console.log(brill['most-contentious']) //=> [ 'RB|VBG' ]
 // (Adverb; Verb, present participle/gerund)
 
-brill.AA; //=> [ 'JJ', 'NN', 'NNP' ]
+console.log(brill.AA) //=> [ 'JJ', 'NN', 'NNP' ]
 // (Adjective; Noun, singular or mass; Proper Noun, singular)
 ```
 
@@ -40,9 +40,11 @@ a list of tags / joined tags (`Object.<string>`).
 Some words are included as all-caps, first-capital, lowercase, or other:
 
 ```js
-brill.THAT; // [ 'WDT', 'DT' ]
-brill.That; // [ 'DT', 'NNP', 'PDT', 'IN', 'RB', 'WP', 'WDT' ]
-brill.that; // [ 'IN', 'DT', 'NN', 'RB', 'RP', 'UH', 'WP', 'VBP', 'WDT' ]
+var brill = require('brill')
+
+console.log(brill.THAT) // [ 'TO', 'DT' ]
+console.log(brill.That) // [ 'DT', 'NNP', 'PDT', 'IN', 'RB', 'EX', 'WDT' ]
+console.log(brill.that) // [ 'IN', 'DT', 'NN', 'RB', 'RP', 'UH', 'WP', 'VBP', 'WDT' ]
 ```
 
 It’s recommended to check a given word first in its original form,
