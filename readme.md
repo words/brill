@@ -5,18 +5,18 @@
 [![Downloads][downloads-badge]][downloads]
 [![Size][size-badge]][size]
 
-The part-of-speech tags from the [Brill-tagger][wiki]: 89,539 unique
-words/symbols with one or more [tags][descriptions].
+The part of speech tags from the [Brill-tagger][wiki]: 89,539 unique words or
+symbols with one or more [tags][descriptions].
 
-## Installation
+## Install
 
 [npm][]:
 
-```bash
+```sh
 npm install brill
 ```
 
-## Usage
+## Use
 
 ```js
 var brill = require('brill')
@@ -37,10 +37,10 @@ console.log(brill.AA) //=> [ 'JJ', 'NN', 'NNP' ]
 
 ### `brill`
 
-`brill` exposes an object where the keys are words and the values are
-a list of tags / joined tags (`Object.<string>`).
+`brill` exposes an object where the keys are words and the values are a list of
+tags or joined tags (`Object.<string>`).
 
-## Capitalisation
+## Capitalization
 
 Some words are included as all-caps, first-capital, lowercase, or other:
 
@@ -52,8 +52,8 @@ console.log(brill.That) // [ 'DT', 'NNP', 'PDT', 'IN', 'RB', 'EX', 'WDT' ]
 console.log(brill.that) // [ 'IN', 'DT', 'NN', 'RB', 'RP', 'UH', 'WP', 'VBP', 'WDT' ]
 ```
 
-It’s recommended to check a given word first in its original form,
-and second, if no tags are found, in its lowercase form.
+It’s recommended to check a given word first in its original form, and second,
+if no tags are found, in its lowercase form.
 
 ## Related
 
