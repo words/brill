@@ -43,7 +43,7 @@
     "xo": "^0.25.0"
   },
   "scripts": {
-    "generate": "node script/generate.js",
+    "generate": "node build.js",
     "format": "remark . -qfo && prettier --write \"**/*.js\" && xo --fix",
     "build-bundle": "browserify . -s brill -o brill.js",
     "build-mangle": "browserify . -s brill -p tinyify -o brill.min.js",

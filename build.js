@@ -6,7 +6,7 @@ var https = require('follow-redirects').https
 var toJSON = require('plain-text-data-to-json')
 var bail = require('bail')
 var concat = require('concat-stream')
-var tags = require('../lib/descriptions')
+var tags = require('./lib/descriptions')
 
 var url =
   'https://github.com/mark-watson/fasttag_v2/blob/master/lexicon.txt?raw=true'
@@ -99,12 +99,12 @@ function generate(data) {
   })
 
   fs.writeFileSync(
-    path.join(__dirname, '..', 'lib', 'words.json'),
+    path.join(__dirname, 'lib', 'words.json'),
     JSON.stringify(words, null, 2) + '\n'
   )
 
   fs.writeFileSync(
-    path.join(__dirname, '..', 'lib', 'tags.json'),
+    path.join(__dirname, 'lib', 'tags.json'),
     JSON.stringify(list, null, 2) + '\n'
   )
 }
