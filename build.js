@@ -15,60 +15,71 @@ process.on('uncaughtException', bail)
 
 followRedirects.https.get(url, onresponse).on('error', bail)
 
+/**
+ * @param {import('http').IncomingMessage} response
+ */
 function onresponse(response) {
   response.resume().on('error', bail).pipe(concat(onconcat))
 }
 
+/**
+ * @param {Buffer} buf
+ */
 function onconcat(buf) {
   clean(toJson(String(buf), {comment: false, delimiter: ' ', forgiving: 'fix'}))
 }
 
-function clean(data) {
+/**
+ * @param {Object.<string, string>} raw
+ */
+function clean(raw) {
+  /** @type {Object.<string, Array.<string>>} */
+  var data = {}
+  /** @type {Object.<string, number|Array.<number>>} */
+  var words = {}
+  /** @type {Array.<string>} */
+  var list = []
+  /** @type {string} */
+  var key
+  /** @type {string} */
+  var lowercase
+  /** @type {Array.<number>} */
+  var currentTags
+
   // Remove values of which the capitalised version has the same value as the
   // lower case version.
-  for (const word of Object.keys(data)) {
-    var caseless = word.toLowerCase()
+  for (key in raw) {
+    lowercase = key.toLowerCase()
 
-    if (word === caseless || !own.call(data, caseless)) {
+    if (key === lowercase || !own.call(raw, lowercase)) {
       continue
     }
 
-    if (data[word] === data[caseless]) {
-      delete data[word]
+    if (raw[key] === raw[lowercase]) {
+      continue
     }
-  }
 
-  for (const word of Object.keys(data)) {
-    data[word] = data[word].split(' ').map(function (tag) {
+    data[key] = raw[key].split(' ').map(function (tag) {
       return tag
         .split('|')
         .map(function (subtag) {
           // There's one tag, `JJSS` for the one word `best`, which I think
           // should be `JJS`
-          if (subtag === 'JJSS') {
-            subtag = 'JJS'
-          }
+          if (subtag === 'JJSS') subtag = 'JJS'
 
           // There's one tag, `PRP$R` for the two words `Her` and `her`, which
           // I think should be `PRP$`.
-          if (subtag === 'PRP$R') {
-            subtag = 'PRP$'
-          }
+          if (subtag === 'PRP$R') subtag = 'PRP$'
 
           // The data contains different tags for Proper nouns versus the normal
           // Brown corpus.
           // Sub-tags, denoted by pipes, however seem not to have changed from
           // Brown’s `NPS` to our `NNPS`.
-          if (subtag === 'NPS') {
-            subtag = 'NNPS'
-          }
-
-          if (subtag === 'NP') {
-            subtag = 'NNP'
-          }
+          if (subtag === 'NPS') subtag = 'NNPS'
+          if (subtag === 'NP') subtag = 'NNP'
 
           if (!(subtag in descriptions)) {
-            console.log('Unknown tag for word `' + word + '`: ', subtag, tag)
+            console.log('Unknown tag for word `' + key + '`: ', subtag, tag)
           }
 
           return subtag
@@ -77,20 +88,13 @@ function clean(data) {
     })
   }
 
-  generate(data)
-}
-
-function generate(data) {
-  var words = {}
-  var list = []
-
-  for (const word of Object.keys(data)) {
-    var currentTags = data[word].map(function (tag) {
-      var pos = list.indexOf(tag)
-      return pos === -1 ? list.push(tag) : pos
+  for (key in data) {
+    currentTags = data[key].map((tag) => {
+      var index = list.indexOf(tag)
+      return index === -1 ? list.push(tag) : index
     })
 
-    words[word] = currentTags.length === 1 ? currentTags[0] : currentTags
+    words[key] = currentTags.length === 1 ? currentTags[0] : currentTags
   }
 
   fs.writeFileSync(
