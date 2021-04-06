@@ -13,10 +13,6 @@
     "pos",
     "post"
   ],
-  "files": [
-    "lib/",
-    "index.js"
-  ],
   "repository": "words/brill",
   "bugs": "https://github.com/words/brill/issues",
   "funding": {
@@ -27,24 +23,27 @@
   "contributors": [
     "Titus Wormer <tituswormer@gmail.com> (https://wooorm.com)"
   ],
-  "dependencies": {},
+  "files": [
+    "lib/",
+    "index.js"
+  ],
   "devDependencies": {
     "bail": "^1.0.0",
-    "browserify": "^16.0.0",
+    "browserify": "^17.0.0",
     "concat-stream": "^2.0.0",
     "follow-redirects": "^1.0.0",
     "nyc": "^15.0.0",
     "plain-text-data-to-json": "^1.0.0",
-    "prettier": "^1.0.0",
-    "remark-cli": "^7.0.0",
-    "remark-preset-wooorm": "^6.0.0",
-    "tape": "^4.0.0",
-    "tinyify": "^2.0.0",
-    "xo": "^0.25.0"
+    "prettier": "^2.0.0",
+    "remark-cli": "^9.0.0",
+    "remark-preset-wooorm": "^8.0.0",
+    "tape": "^5.0.0",
+    "tinyify": "^3.0.0",
+    "xo": "^0.38.0"
   },
   "scripts": {
     "generate": "node build.js",
-    "format": "remark . -qfo && prettier --write \"**/*.js\" && xo --fix",
+    "format": "remark . -qfo && prettier . -w --loglevel warn && xo --fix",
     "build-bundle": "browserify . -s brill -o brill.js",
     "build-mangle": "browserify . -s brill -p tinyify -o brill.min.js",
     "build": "npm run build-bundle && npm run build-mangle",

@@ -17,11 +17,8 @@ process.on('uncaughtException', bail)
 
 https.get(url, onresponse).on('error', bail)
 
-function onresponse(res) {
-  res
-    .resume()
-    .on('error', bail)
-    .pipe(concat(onconcat))
+function onresponse(response) {
+  response.resume().on('error', bail).pipe(concat(onconcat))
 }
 
 function onconcat(buf) {
@@ -31,23 +28,23 @@ function onconcat(buf) {
 function clean(data) {
   // Remove values of which the capitalised version has the same value as the
   // lower case version.
-  Object.keys(data).forEach(function(word) {
+  for (const word of Object.keys(data)) {
     var caseless = word.toLowerCase()
 
     if (word === caseless || !own.call(data, caseless)) {
-      return
+      continue
     }
 
     if (data[word] === data[caseless]) {
       delete data[word]
     }
-  })
+  }
 
-  Object.keys(data).forEach(function(word) {
-    data[word] = data[word].split(' ').map(function(tag) {
+  for (const word of Object.keys(data)) {
+    data[word] = data[word].split(' ').map(function (tag) {
       return tag
         .split('|')
-        .map(function(subtag) {
+        .map(function (subtag) {
           // There's one tag, `JJSS` for the one word `best`, which I think
           // should be `JJS`
           if (subtag === 'JJSS') {
@@ -80,7 +77,7 @@ function clean(data) {
         })
         .join('|')
     })
-  })
+  }
 
   generate(data)
 }
@@ -89,14 +86,14 @@ function generate(data) {
   var words = {}
   var list = []
 
-  Object.keys(data).forEach(function(word) {
-    var currentTags = data[word].map(function(tag) {
+  for (const word of Object.keys(data)) {
+    var currentTags = data[word].map(function (tag) {
       var pos = list.indexOf(tag)
       return pos === -1 ? list.push(tag) : pos
     })
 
     words[word] = currentTags.length === 1 ? currentTags[0] : currentTags
-  })
+  }
 
   fs.writeFileSync(
     path.join(__dirname, 'lib', 'words.json'),
