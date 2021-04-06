@@ -76,9 +76,9 @@ if no tags are found, in its lowercase form.
 
 <!-- Definitions -->
 
-[build-badge]: https://img.shields.io/travis/words/brill.svg
+[build-badge]: https://github.com/words/brill/workflows/main/badge.svg
 
-[build]: https://travis-ci.org/words/brill
+[build]: https://github.com/words/brill/actions
 
 [coverage-badge]: https://img.shields.io/codecov/c/github/words/brill.svg
 
