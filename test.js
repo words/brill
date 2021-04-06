@@ -1,7 +1,5 @@
-'use strict'
-
-var test = require('tape')
-var brill = require('.')
+import test from 'tape'
+import {brill} from './index.js'
 
 test('brill', function (t) {
   t.deepEqual(

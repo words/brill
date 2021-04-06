@@ -10,6 +10,9 @@ symbols with one or more [tags][descriptions].
 
 ## Install
 
+This package is ESM only: Node 12+ is needed to use it and it must be `import`ed
+instead of `require`d.
+
 [npm][]:
 
 ```sh
@@ -19,7 +22,7 @@ npm install brill
 ## Use
 
 ```js
-var brill = require('brill')
+import {brill} from 'brill'
 
 console.log(Object.keys(brill).length) // 89539
 
@@ -34,6 +37,9 @@ console.log(brill.AA) //=> [ 'JJ', 'NN', 'NNP' ]
 ```
 
 ## API
+
+This package exports the following identifiers: `brill`.
+There is no default export.
 
 ### `brill`
 
@@ -100,4 +106,4 @@ if no tags are found, in its lowercase form.
 
 [wiki]: https://en.wikipedia.org/wiki/Brill_tagger
 
-[descriptions]: lib/descriptions.json
+[descriptions]: lib/descriptions.js

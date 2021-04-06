@@ -1,12 +1,10 @@
-'use strict'
-
-var fs = require('fs')
-var path = require('path')
-var https = require('follow-redirects').https
-var toJSON = require('plain-text-data-to-json')
-var bail = require('bail')
-var concat = require('concat-stream')
-var tags = require('./lib/descriptions')
+import fs from 'fs'
+import path from 'path'
+import followRedirects from 'follow-redirects'
+import {toJson} from 'plain-text-data-to-json'
+import {bail} from 'bail'
+import concat from 'concat-stream'
+import {descriptions} from './lib/descriptions.js'
 
 var url =
   'https://github.com/mark-watson/fasttag_v2/blob/master/lexicon.txt?raw=true'
@@ -15,14 +13,14 @@ var own = {}.hasOwnProperty
 
 process.on('uncaughtException', bail)
 
-https.get(url, onresponse).on('error', bail)
+followRedirects.https.get(url, onresponse).on('error', bail)
 
 function onresponse(response) {
   response.resume().on('error', bail).pipe(concat(onconcat))
 }
 
 function onconcat(buf) {
-  clean(toJSON(String(buf), {comment: false, delimiter: ' ', forgiving: 'fix'}))
+  clean(toJson(String(buf), {comment: false, delimiter: ' ', forgiving: 'fix'}))
 }
 
 function clean(data) {
@@ -69,7 +67,7 @@ function clean(data) {
             subtag = 'NNP'
           }
 
-          if (!(subtag in tags)) {
+          if (!(subtag in descriptions)) {
             console.log('Unknown tag for word `' + word + '`: ', subtag, tag)
           }
 
@@ -96,12 +94,12 @@ function generate(data) {
   }
 
   fs.writeFileSync(
-    path.join(__dirname, 'lib', 'words.json'),
-    JSON.stringify(words, null, 2) + '\n'
+    path.join('lib', 'words.js'),
+    'export var words = ' + JSON.stringify(words, null, 2) + '\n'
   )
 
   fs.writeFileSync(
-    path.join(__dirname, 'lib', 'tags.json'),
-    JSON.stringify(list, null, 2) + '\n'
+    path.join('lib', 'tags.js'),
+    'export var tags = ' + JSON.stringify(list, null, 2) + '\n'
   )
 }
