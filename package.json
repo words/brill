@@ -70,12 +70,6 @@
   },
   "xo": {
     "prettier": true,
-    "rules": {
-      "import/no-mutable-exports": "off",
-      "guard-for-in": "off",
-      "no-var": "off",
-      "prefer-arrow-callback": "off"
-    },
     "ignore": [
       "lib/words.js"
     ]

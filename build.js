@@ -7,10 +7,10 @@ import {bail} from 'bail'
 import concat from 'concat-stream'
 import {descriptions} from './lib/descriptions.js'
 
-var url =
+const url =
   'https://github.com/mark-watson/fasttag_v2/blob/master/lexicon.txt?raw=true'
 
-var own = {}.hasOwnProperty
+const own = {}.hasOwnProperty
 
 process.on('uncaughtException', bail)
 
@@ -35,76 +35,76 @@ function onconcat(buf) {
  */
 function clean(raw) {
   /** @type {Object.<string, Array.<string>>} */
-  var data = {}
+  const data = {}
   /** @type {Object.<string, number|Array.<number>>} */
-  var words = {}
+  const words = {}
   /** @type {Array.<string>} */
-  var list = []
+  const list = []
   /** @type {string} */
-  var key
-  /** @type {string} */
-  var lowercase
-  /** @type {Array.<number>} */
-  var currentTags
+  let key
 
   // Remove values of which the capitalised version has the same value as the
   // lower case version.
   for (key in raw) {
-    lowercase = key.toLowerCase()
+    if (own.call(raw, key)) {
+      const lowercase = key.toLowerCase()
 
-    if (key === lowercase || !own.call(raw, lowercase)) {
-      continue
+      if (key === lowercase || !own.call(raw, lowercase)) {
+        continue
+      }
+
+      if (raw[key] === raw[lowercase]) {
+        continue
+      }
+
+      data[key] = raw[key].split(' ').map(function (tag) {
+        return tag
+          .split('|')
+          .map(function (subtag) {
+            // There's one tag, `JJSS` for the one word `best`, which I think
+            // should be `JJS`
+            if (subtag === 'JJSS') subtag = 'JJS'
+
+            // There's one tag, `PRP$R` for the two words `Her` and `her`, which
+            // I think should be `PRP$`.
+            if (subtag === 'PRP$R') subtag = 'PRP$'
+
+            // The data contains different tags for Proper nouns versus the normal
+            // Brown corpus.
+            // Sub-tags, denoted by pipes, however seem not to have changed from
+            // Brown’s `NPS` to our `NNPS`.
+            if (subtag === 'NPS') subtag = 'NNPS'
+            if (subtag === 'NP') subtag = 'NNP'
+
+            if (!(subtag in descriptions)) {
+              console.log('Unknown tag for word `' + key + '`: ', subtag, tag)
+            }
+
+            return subtag
+          })
+          .join('|')
+      })
     }
-
-    if (raw[key] === raw[lowercase]) {
-      continue
-    }
-
-    data[key] = raw[key].split(' ').map(function (tag) {
-      return tag
-        .split('|')
-        .map(function (subtag) {
-          // There's one tag, `JJSS` for the one word `best`, which I think
-          // should be `JJS`
-          if (subtag === 'JJSS') subtag = 'JJS'
-
-          // There's one tag, `PRP$R` for the two words `Her` and `her`, which
-          // I think should be `PRP$`.
-          if (subtag === 'PRP$R') subtag = 'PRP$'
-
-          // The data contains different tags for Proper nouns versus the normal
-          // Brown corpus.
-          // Sub-tags, denoted by pipes, however seem not to have changed from
-          // Brown’s `NPS` to our `NNPS`.
-          if (subtag === 'NPS') subtag = 'NNPS'
-          if (subtag === 'NP') subtag = 'NNP'
-
-          if (!(subtag in descriptions)) {
-            console.log('Unknown tag for word `' + key + '`: ', subtag, tag)
-          }
-
-          return subtag
-        })
-        .join('|')
-    })
   }
 
   for (key in data) {
-    currentTags = data[key].map((tag) => {
-      var index = list.indexOf(tag)
-      return index === -1 ? list.push(tag) : index
-    })
+    if (own.call(data, key)) {
+      const currentTags = data[key].map((tag) => {
+        const index = list.indexOf(tag)
+        return index === -1 ? list.push(tag) : index
+      })
 
-    words[key] = currentTags.length === 1 ? currentTags[0] : currentTags
+      words[key] = currentTags.length === 1 ? currentTags[0] : currentTags
+    }
   }
 
   fs.writeFileSync(
     path.join('lib', 'words.js'),
-    'export var words = ' + JSON.stringify(words, null, 2) + '\n'
+    'export const words = ' + JSON.stringify(words, null, 2) + '\n'
   )
 
   fs.writeFileSync(
     path.join('lib', 'tags.js'),
-    'export var tags = ' + JSON.stringify(list, null, 2) + '\n'
+    'export const tags = ' + JSON.stringify(list, null, 2) + '\n'
   )
 }
