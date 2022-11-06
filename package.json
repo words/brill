@@ -33,9 +33,9 @@
     "index.js"
   ],
   "devDependencies": {
-    "@types/concat-stream": "^1.0.0",
+    "@types/concat-stream": "^2.0.0",
     "@types/follow-redirects": "^1.0.0",
-    "@types/node": "^14.0.0",
+    "@types/node": "^18.0.0",
     "@types/tape": "^4.0.0",
     "bail": "^2.0.0",
     "c8": "^7.0.0",
@@ -43,13 +43,13 @@
     "follow-redirects": "^1.0.0",
     "plain-text-data-to-json": "^2.0.0",
     "prettier": "^2.0.0",
-    "remark-cli": "^9.0.0",
-    "remark-preset-wooorm": "^8.0.0",
+    "remark-cli": "^11.0.0",
+    "remark-preset-wooorm": "^9.0.0",
     "rimraf": "^3.0.0",
     "tape": "^5.0.0",
     "type-coverage": "^2.0.0",
     "typescript": "^4.0.0",
-    "xo": "^0.38.0"
+    "xo": "^0.52.0"
   },
   "scripts": {
     "prepack": "npm run build && npm run format",
@@ -75,7 +75,10 @@
       "guard-for-in": "off",
       "no-var": "off",
       "prefer-arrow-callback": "off"
-    }
+    },
+    "ignore": [
+      "lib/words.js"
+    ]
   },
   "remarkConfig": {
     "plugins": [
