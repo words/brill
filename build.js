@@ -31,29 +31,28 @@ function onconcat(buf) {
 }
 
 /**
- * @param {Object.<string, string>} raw
+ * @param {Record<string, string>} raw
  */
 function clean(raw) {
-  /** @type {Object.<string, Array.<string>>} */
+  /** @type {Record<string, Array<string>>} */
   const data = {}
-  /** @type {Object.<string, number|Array.<number>>} */
+  /** @type {Record<string, number|Array<number>>} */
   const words = {}
-  /** @type {Array.<string>} */
+  /** @type {Array<string>} */
   const list = []
   /** @type {string} */
   let key
 
-  // Remove values of which the capitalised version has the same value as the
-  // lower case version.
   for (key in raw) {
     if (own.call(raw, key)) {
       const lowercase = key.toLowerCase()
 
-      if (key === lowercase || !own.call(raw, lowercase)) {
-        continue
-      }
-
-      if (raw[key] === raw[lowercase]) {
+      // Ignore cased values of which the lowercase version has the same values.
+      if (
+        key !== lowercase &&
+        own.call(raw, lowercase) &&
+        raw[key] === raw[lowercase]
+      ) {
         continue
       }
 
@@ -100,11 +99,15 @@ function clean(raw) {
 
   fs.writeFileSync(
     path.join('lib', 'words.js'),
-    'export const words = ' + JSON.stringify(words, null, 2) + '\n'
+    '/**\n * @type {Record<string, number|Array<number>>}\n */\nexport const words = ' +
+      JSON.stringify(words, null, 2) +
+      '\n'
   )
 
   fs.writeFileSync(
     path.join('lib', 'tags.js'),
-    'export const tags = ' + JSON.stringify(list, null, 2) + '\n'
+    '/**\n * @type {Array<string>}\n */\nexport const tags = ' +
+      JSON.stringify(list, null, 2) +
+      '\n'
   )
 }

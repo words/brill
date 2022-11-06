@@ -44,7 +44,7 @@ There is no default export.
 ### `brill`
 
 `brill` exposes an object where the keys are words and the values are a list of
-tags or joined tags (`Object.<string>`).
+tags or joined tags (`Record<string>`).
 
 ## Capitalization
 
