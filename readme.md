@@ -16,9 +16,9 @@ symbols with one or more tags.
 *   [Use](#use)
 *   [API](#api)
     *   [`brill`](#brill-1)
+    *   [`descriptions`](#descriptions)
 *   [Data](#data)
     *   [Capitalization](#capitalization)
-    *   [Descriptions](#descriptions)
 *   [Types](#types)
 *   [Compatibility](#compatibility)
 *   [Related](#related)
@@ -76,12 +76,17 @@ console.log(brill.AA) //=> [ 'JJ', 'NN', 'NNP' ]
 
 ## API
 
-This package exports the identifier `brill`.
+This package exports the identifiers `brill` and `descriptions`.
 There is no default export.
 
 ### `brill`
 
-`brill` exposes a map of words to a list of tags (`Record<string, Array<string>>`).
+Map of words to a list of tags (`Record<string, Array<string>>`).
+
+### `descriptions`
+
+Map of tags to human descriptions (`Record<string, string>`).
+See [`lib/descriptions.js`][descriptions].
 
 ## Data
 
@@ -99,10 +104,6 @@ console.log(brill.that) // [ 'IN', 'DT', 'NN', 'RB', 'RP', 'UH', 'WP', 'VBP', 'W
 
 It’s recommended to check a word first in its original form first and if it does
 not exist in its lowercase form.
-
-### Descriptions
-
-See [lib/descriptions.js][descriptions].
 
 ## Types
 
